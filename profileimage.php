@@ -16,7 +16,7 @@ function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oa
  
 $connection = getConnectionWithAccessToken($consumerkey, $consumersecret, $accesstoken, $accesstokensecret);
  
-$profile = $connection->get("https://api.twitter.com/1/users/profile_image?screen_name=github&size=bigger");
+$profile = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=".$twitteruser."&count=".$notweets);
  
 echo json_encode($profile);
 ?>
